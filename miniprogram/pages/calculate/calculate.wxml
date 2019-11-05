@@ -1,0 +1,112 @@
+<view class="root">
+  <view class="scene">
+    <!-- 弹窗遮罩层 -->
+    <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+    <!-- 计算绩点弹窗 -->
+    <view class="modalDlg" wx:if="{{showModal}}">
+      <!-- 二维码或其他图片 -->
+      <view class="pop-view">
+        <image src="../../images/pop-background1.png" />
+        <text class="title-pop">您的绩点为</text>
+        <text class="text-pop">{{avgGPA}}/5</text>
+        <text class="tip-pop">继续努力哦~</text>
+      </view>
+      <view bindtap="ok" class="ok">
+        <van-icon custom-class="clearIcon" name="close" size="60rpx" color="white"></van-icon>
+      </view>
+    </view>
+    <form bindsubmit="formSubmit">
+      <view class="view-name">
+        <van-row>
+          <van-col span="8">
+            <text class="name-text">您的姓名：</text>
+          </van-col>
+          <van-col span="16">
+            <input type="text" id="username" name="userName" value="{{username?username:null}}" placeholder="仅计算绩点可以不填" placeholder-class="phClass" bindblur="onblur" bindinput="update" />
+          </van-col>
+        </van-row>
+      </view>
+      <!-- 科目列表 -->
+      <block wx:for="{{count}}" wx:key="{{index}}">
+        <!--分割线 -->
+        <text class="divLine">课程{{index+1}}</text>
+        <!-- 课程信息 -->
+        <view class="view-name">
+          <van-row >
+            <van-col span="2" >
+              <!--占一个空格，防止跳跃-->
+              <view wx:if="{{!(index!=0||count>1)}}" style="font-size:20px;">　　</view>
+              <button id="{{index}}" class="icon-btn" hover-class="icon-btn-hover" wx:if="{{index!=0||count>1}}" form-type="submit" data-type="3">
+                <view class="clearIcon">
+                  <van-icon name="close" size="50rpx" color="gray"></van-icon>
+                </view>
+              </button>
+            </van-col>
+            <van-col span="7">
+              <text class="text">课程名：</text>
+            </van-col>
+            <van-col span="15">
+              <input type="text" id="course[{{index}}].name" name="course[{{index}}].name" value="{{course[index].name}}" placeholder="仅计算绩点可以不填" placeholder-class="phClass" bindblur="onblur" bindinput="update" />
+            </van-col>
+          </van-row>
+        </view>
+        <!-- 成绩、学分项 -->
+        <view class="view-name">
+          <van-row gutter="60" custom-class="row">
+            <van-col span="9" offset='2'>
+              <input class="grade-input" id="course[{{index}}].grade" type="digit" name="course[{{index}}].grade" value="{{course[index].grade}}" placeholder="输入成绩" placeholder-class="phClass" bindblur="onblur" bindinput="update" />
+            </van-col>
+
+            <van-col span="6">
+              <input class="credit-input" id="course[{{index}}].credit" type="digit" name="course[{{index}}].credit" value="{{course[index].credit}}" placeholder="输入学分" placeholder-class="phClass" bindblur="onblur" bindinput="update" />
+            </van-col>
+            <van-col span="2">
+              <!--占一个空格，防止跳跃-->
+              <text wx:if="{{!(index==count-1)}}" style="font-size:50rpx">　</text>
+              <van-icon wx:if="{{index==count-1}}" custom-class="addIcon" name="add-o" size="50rpx" color="{{colorPrimary}}" bindtap="addCourse" />
+            </van-col>
+          </van-row>
+        </view>
+        <view class="tips-view">
+          <van-row custom-class="row">
+            <van-col span="7" offset='3'>
+              <view style="width:240rpx;height:30rpx;">
+                <text wx:if="{{gradeTipFlag[index]==true}}" space="ensp" class="tips-text">{{gradeTip}}</text>
+              </view>
+
+            </van-col>
+            <van-col span="7" offset='3'>
+              <view style="width:240rpx;height:30rpx;">
+                <text space="ensp" class="tips-text" wx:if="{{creditTipFlag[index]==true}}">{{creditTip}}</text>
+              </view>
+            </van-col>
+          </van-row>
+        </view>
+      </block>
+
+      <!--按钮-->
+      <view style="margin-top:40rpx">
+        <van-row>
+          <van-col span="4" offset="1">
+            <button class="button-delete" hover-class="button-hover" bindtap="formReset">
+              <van-icon custom-class="delIcon" name="delete" size="45rpx" color="gray"></van-icon>
+              <text class="btnDel-text">清空</text>
+            </button>
+          </van-col>
+          <van-col span="9">
+            <button class="button" hover-class="button-hover" form-type="submit" data-type="1">
+              <text class="btn-text">生成成绩单</text>
+            </button>
+          </van-col>
+          <van-col span="9">
+            <button class="button" hover-class="button-hover" form-type="submit" data-type="2">
+              <text class="btn-text">仅计算绩点</text>
+            </button>
+
+          </van-col>
+        </van-row>
+      </view>
+
+    </form>
+  </view>
+</view>

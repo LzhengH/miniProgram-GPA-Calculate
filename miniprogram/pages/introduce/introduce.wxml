@@ -1,0 +1,28 @@
+<view class="root">
+  <view class="scene">
+    <view class="theme">
+      <view class="icon">
+        <van-icon name="orders-o" size="80rpx" color="white" />
+      </view>
+      <view class="title">
+        <text>应用情境</text>
+      </view>
+    </view>
+    <view class="text-view">
+      <text class="main-text">　　{{mainText1}}</text>
+    </view>
+
+    <view class="theme">
+      <view class="icon">
+        <van-icon name="orders-o" size="80rpx" color="white" />
+      </view>
+      <view class="title">
+        <text>主要功能</text>
+      </view>
+    </view>
+    <view class="text-view">
+      <text class="main-text">　　{{mainText2}}</text>
+    </view>
+  </view>
+
+</view>

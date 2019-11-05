@@ -1,0 +1,90 @@
+.root {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.background-image {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+}
+
+.scene {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.view-title {
+  text-align: center;
+  font-size: 80rpx;
+  margin-top: 50rpx;
+  font-family: STHupo;
+  color: #394ca3;
+}
+
+/* 名字字体 */
+
+.view-name {
+  text-align: center;
+  margin-top: 10rpx;
+  font-size: 26px;
+  color: #394ca3;
+}
+
+/* GPA字体 */
+
+.view-GPA {
+  text-align: center;
+  margin-top: 10rpx;
+  font-size: 26px;
+  color: #394ca3;
+}
+
+.view-itemTitle {
+  margin-top: 10rpx;
+  font-size: 18px;
+  color: #394ca3;
+}
+
+.view-item-odd {
+  background-color: rgb(212, 212, 212);
+}
+
+.text-item {
+  color: #394ca3;
+  font-size: 16px;
+}
+
+.divLine-title {
+  background: #394ca3;
+  width: 100%;
+  height: 3rpx;
+}
+
+.container {
+  text-align: center;
+}
+
+
+.button {
+  border: 1.5rpx solid #394ca3;
+  width: 250rpx;
+  margin-top: 30rpx;
+  align-items: center;
+  border-radius: 50rpx;
+  background-color: white;
+}
+.button-hover {
+  background-color: gainsboro;
+}
+
+.btn-text {
+  font-size: 35rpx;
+  color: #394ca3;
+}

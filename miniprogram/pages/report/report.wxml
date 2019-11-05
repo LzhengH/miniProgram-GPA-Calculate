@@ -1,0 +1,82 @@
+<view class="root">
+  <image class='background-image' src='../../images/report-background.png' mode="aspectFill"></image>
+  <view class="scene">
+    <view class="view-title">
+      <text>5分制绩点成绩单</text>
+    </view>
+    <view class="view-name">
+      <text>姓名：{{username}}</text>
+    </view>
+    <view class="view-GPA">
+      <text>平均学分绩点：{{avgGPA}}/5</text>
+    </view>
+    <view class="view-itemTitle">
+      <van-row>
+        <van-col span="13" offset='2'>
+          <text class="text-itemTitle">课程名</text>
+        </van-col>
+        <van-col span="4">
+          <text class="text-itemTitle">成绩</text>
+        </van-col>
+        <van-col span="5">
+          <text class="text-itemTitle">学分</text>
+        </van-col>
+      </van-row>
+    </view>
+    <view>
+      <view class="divLine-title"></view>
+    </view>
+    <block wx:for="{{count}}" wx:key="{{index}}">
+      <!-- 单科成绩 -->
+      <view class="view-item-odd" wx:if="{{index%2!=0}}">
+        <van-row>
+          <van-col span="13" offset='2'>
+            <text class="text-item">{{course[index].name}}</text>
+          </van-col>
+          <van-col span="4">
+            <text class="text-item">{{course[index].grade}}</text>
+          </van-col>
+          <van-col span="5">
+            <text class="text-item">{{course[index].credit}}</text>
+          </van-col>
+        </van-row>
+
+      </view>
+      <view class="view-item" wx:if="{{index%2==0}}">
+        <van-row>
+          <van-col span="13" offset='2'>
+            <text class="text-item">{{course[index].name}}</text>
+          </van-col>
+          <van-col span="4">
+            <text class="text-item">{{course[index].grade}}</text>
+          </van-col>
+          <van-col span="5">
+            <text class="text-item">{{course[index].credit}}</text>
+          </van-col>
+        </van-row>
+      </view>
+    </block>
+
+    <view>
+      <view class="divLine-title"></view>
+    </view>
+    <van-row>
+      <van-col span="10" offset="2">
+        <button class="button" hover-class="button-hover" open-type="share">
+          <text class="btn-text">分享成绩单</text>
+        </button>
+      </van-col>
+      <van-col span="10">
+        <button class="button" hover-class="button-hover" bind:tap="bindIndex">
+          <text class="btn-text">回到首页</text>
+        </button>
+      </van-col>
+    </van-row>
+
+
+
+  </view>
+
+
+
+</view>

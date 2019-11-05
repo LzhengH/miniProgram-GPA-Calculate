@@ -1,0 +1,265 @@
+/* 底部view */
+
+.root {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* 主场景 */
+
+.scene {
+  height: 100vh;
+  z-index: 1;
+}
+
+/* 姓名和课程的view */
+
+.view-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20rpx;
+}
+
+/* 姓名前的文字 */
+
+.name-text {
+  font-size: 40rpx;
+  display: inline-block;
+  color: gray;
+  margin-top: 20rpx;
+}
+
+/* 课程名前的文字 */
+
+.text {
+  font-size: 40rpx;
+  display: inline-block;
+  color: gray;
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+}
+
+/* 输入框 */
+
+input {
+  display: inline-block;
+  border: 5rpx solid #9096ef;
+  border-radius: 15rpx;
+  width: 400rpx;
+  height: 80rpx;
+  text-align: center;
+}
+
+/* input缺省字体 */
+
+.phClass {
+  text-align: center;
+}
+
+/* 分割线中间的字 */
+
+.divLine {
+  font-size: 32rpx;
+  color: gray;
+  display: table;
+  width: auto;
+  white-space: nowrap;
+  border-spacing: 0.5rem 0;
+  margin-left: 28rpx;
+  margin-right: 28rpx;
+}
+
+/* 分割线左右的线 */
+
+.divLine::before, .divLine::after {
+  display: table-cell;
+  content: "";
+  width: 55%;
+  background: linear-gradient(#d8d8d8, #d8d8d8) repeat-x center;
+  background-size: 0.1rem 0.1rem;
+}
+
+/* clear图标 */
+
+.clearIcon {
+  margin-top: 24rpx;
+  margin-left: -24rpx;
+}
+
+/* add图标 */
+
+.addIcon {
+  display: inline-block;
+  margin-top: 12rpx;
+  z-index: 9999
+}
+
+/* 成绩输入框 */
+
+.grade-input {
+  width: 250rpx;
+  height: 70rpx;
+}
+
+/* 学分输入框 */
+
+.credit-input {
+  width: 200rpx;
+  height: 70rpx;
+}
+
+/* clear图标外包的按钮 */
+
+.icon-btn {
+  overflow:hidden;
+  border-radius: 80rpx;
+  margin-top: 20rpx;
+  margin-left: 22rpx;
+  width: 50rpx;
+  height: 50rpx;
+  display: flex;
+  justify-content:flex-start;
+  align-items:center;
+
+}
+/* clear按钮点击态 */
+.icon-btn-hover{
+
+}
+/* 清空按钮 */
+.button-delete{
+  display: flex;
+  border: 1.5rpx solid gray;
+  width: 120rpx;
+  height: 50rpx;
+  padding-top: 16rpx;
+  justify-content:flex-start;
+  align-items:center;
+  border-radius: 12rpx;
+  background-color: white;
+  margin-top: 26rpx;
+}
+/* 清空按钮的图标 */
+.delIcon{
+  margin-left: -22rpx;
+}
+
+/* 按钮 */
+
+.button {
+  border: 1.5rpx solid #394ca3;
+  width: 250rpx;
+  margin-bottom: 40rpx;
+  align-items: center;
+  border-radius: 50rpx;
+  background-color: white;
+}
+
+/* 按钮点击态 */
+
+.button-hover {
+  background-color: gainsboro;
+}
+/* 清空按钮内的文字 */
+.btnDel-text{
+  font-size: 30rpx;
+  color: gray;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 16rpx;
+}
+
+/* 按钮内的文字 */
+
+.btn-text {
+  font-size: 35rpx;
+  color: #394ca3;
+}
+
+.row {
+  display: block;
+}
+
+.tips-view {
+  margin-top: 0rpx;
+  margin-top: -16rpx;
+}
+
+.tips-text {
+  color: red;
+  font-size: 25rpx;
+}
+/* 遮罩层 */
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.767);
+  z-index: 9000;
+  opacity: 0.5;
+}
+/*计算绩点弹窗 */
+.modalDlg{
+  width: 70%;
+    position: fixed;
+    top: 200rpx;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    margin: 0 auto;
+    border-radius:5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pop-view{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400rpx;
+  height: 480rpx;
+  position: relative;
+  
+}
+/* 弹出层里面的图片 */
+.modalDlg image{
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  left: 0rpx;
+  top: 0rpx;
+  border-radius: 20rpx;
+  z-index: -1
+}
+/* 弹出层里面的按钮 */
+.ok{
+  height: 56rpx;
+  text-align: center;
+  margin:30rpx auto;
+  border-radius: 50rpx;
+}
+/* 弹出层里面的标题 */
+.title-pop{
+  font-size: 18px;
+  color:white;
+  margin-top: 20rpx;
+  z-index: 1
+}
+/* 弹出层里面的正文 */
+.text-pop{
+  font-size: 28px;
+  color:#394ca3;
+  margin-top: 80rpx;
+  z-index: 1
+}
+/* 弹出层里面的提示语 */
+.tip-pop{
+  font-size: 18px;
+  color:#394ca3;
+  margin-top: 30rpx;
+  z-index: 1
+}

@@ -1,0 +1,28 @@
+<view class="root">
+  <view class="scene">
+    <view class="theme">
+      <view class="icon">
+        <van-icon name="label-o" size="80rpx" color="white" />
+      </view>
+      <view class="title">
+        <text>递推公式</text>
+      </view>
+    </view>
+    <view class="image">
+      <image src="../../images/formula1.png" mode='aspectFit'></image>
+    </view>
+
+    <view class="theme">
+      <view class="icon">
+        <van-icon name="label-o" size="80rpx" color="white" />
+      </view>
+      <view class="title">
+        <text>公式展开</text>
+      </view>
+    </view>
+    <view class="image">
+      <image src="../../images/formula2.png" mode='widthFix'></image>
+    </view>
+  </view>
+
+</view>

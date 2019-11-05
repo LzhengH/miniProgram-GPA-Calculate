@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/calculate/calculate",
+    "pages/algorithm/algorithm",
+    "pages/introduce/introduce",
+    "pages/report/report",
+    "pages/about/about"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#394ca3",
+    "navigationBarTitleText": "绩点计算",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents":{
+    "van-button": "vant-weapp/button",
+    "van-radio": "vant-weapp/radio",
+    "van-radio-group": "vant-weapp/radio-group",
+    "van-row": "vant-weapp/row",
+    "van-col": "vant-weapp/col",
+    "van-icon": "vant-weapp/icon"
+  }
+}
