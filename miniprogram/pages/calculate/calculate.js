@@ -12,7 +12,9 @@ Page({
     gradeTip: "请填入0-100的数字",
     creditTip: "请填入合理学分",
     avgGPA: null,
-    showModal: false
+    showModal: false,
+    digit:[1, 2, 3, 4, 5, 6],
+    digitIndex: 1
   },
   //加载本页面时获取本地缓存填在input内
   onLoad: function(options) {
@@ -63,7 +65,7 @@ Page({
         }
       })
       if (flag == true) {
-        var avgGPA = (sumGPA / sumCredit).toFixed(2)
+        var avgGPA = (sumGPA / sumCredit).toFixed(this.data.digitIndex+1)
         this.setData({
           avgGPA: avgGPA,
           showModal: true
@@ -92,7 +94,8 @@ Page({
         }
       })
       if (flag == true) {
-        var avgGPA = (sumGPA / sumCredit).toFixed(2)
+        var digit = this.data.digitIndex + 1
+        var avgGPA = (sumGPA / sumCredit).toFixed(digit)
         this.setData({
           avgGPA: avgGPA,
         })
@@ -212,6 +215,13 @@ Page({
   ok: function() {
     this.setData({
       showModal: false
+    })
+  },
+  //选择保留位数
+  bindPickerChange: function(e){
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      digitIndex: e.detail.value
     })
   }
 })

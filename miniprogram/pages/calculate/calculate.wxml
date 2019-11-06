@@ -32,8 +32,8 @@
         <text class="divLine">课程{{index+1}}</text>
         <!-- 课程信息 -->
         <view class="view-name">
-          <van-row >
-            <van-col span="2" >
+          <van-row>
+            <van-col span="2">
               <!--占一个空格，防止跳跃-->
               <view wx:if="{{!(index!=0||count>1)}}" style="font-size:20px;">　　</view>
               <button id="{{index}}" class="icon-btn" hover-class="icon-btn-hover" wx:if="{{index!=0||count>1}}" form-type="submit" data-type="3">
@@ -85,6 +85,14 @@
       </block>
 
       <!--按钮-->
+      <!-- 选择保留位数 -->
+      <view class="view-digit">
+        <text class="text">保留位数（点击选择）:</text>
+        <view class="picker">
+          <picker bindchange="bindPickerChange" value="{{digitIndex}}" range="{{digit}}">{{digit[digitIndex]}}</picker>
+        </view>
+      </view>
+      <!-- 清空、提交、计算 -->
       <view style="margin-top:40rpx">
         <van-row>
           <van-col span="4" offset="1">
