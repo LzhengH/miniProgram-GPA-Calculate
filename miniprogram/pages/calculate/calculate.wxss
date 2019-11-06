@@ -109,18 +109,7 @@ input {
   width: 200rpx;
   height: 70rpx;
 }
-/* 位数选择view */
-.view-digit{
-  text-align: center;
-}
-/* 位数选择器中的文本 */
-.picker{
-  display: inline-block;  
-  font-size: 40rpx;
-  color: gray;
-  margin-top: 20rpx;
-  margin-left: 30rpx;
-}
+
 /* clear图标外包的按钮 */
 
 .icon-btn {

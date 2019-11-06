@@ -85,13 +85,6 @@
       </block>
 
       <!--按钮-->
-      <!-- 选择保留位数 -->
-      <view class="view-digit">
-        <text class="text">保留位数（点击选择）:</text>
-        <view class="picker">
-          <picker bindchange="bindPickerChange" value="{{digitIndex}}" range="{{digit}}">{{digit[digitIndex]}}</picker>
-        </view>
-      </view>
       <!-- 清空、提交、计算 -->
       <view style="margin-top:40rpx">
         <van-row>
