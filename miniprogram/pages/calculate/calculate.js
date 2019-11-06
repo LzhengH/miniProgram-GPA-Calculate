@@ -13,6 +13,8 @@ Page({
     creditTip: "请填入合理学分",
     avgGPA: null,
     showModal: false,
+    digit:[1, 2, 3, 4, 5, 6],
+    digitIndex: 1
   },
   //加载本页面时获取本地缓存填在input内
   onLoad: function(options) {
@@ -50,7 +52,7 @@ Page({
       course.forEach(function(value, index, array) {
         var grade = parseFloat(value.grade)
         var credit = parseFloat(value.credit)
-        if (grade >= 60)
+        if (grade >= 50)
           sumGPA = sumGPA + (grade / 10 - 5) * credit
         sumCredit = sumCredit + credit
         if (value.grade == "" || grade < 0 || grade > 100 || value.credit == "" || credit < 0 || credit > 10) {
@@ -63,7 +65,7 @@ Page({
         }
       })
       if (flag == true) {
-        var avgGPA = (sumGPA / sumCredit).toFixed(2)
+        var avgGPA = (sumGPA / sumCredit).toFixed(this.data.digitIndex+1)
         this.setData({
           avgGPA: avgGPA,
           showModal: true
@@ -79,7 +81,7 @@ Page({
       course.forEach(function(value, index, array) {
         var grade = parseFloat(value.grade)
         var credit = parseFloat(value.credit)
-        if (grade >= 60)
+        if (grade >= 50)
           sumGPA = sumGPA + (grade / 10 - 5) * credit
         sumCredit = sumCredit + credit
         if (username == "" || value.name == "" || value.grade == "" || grade < 0 || grade > 100 || value.credit == "" || credit < 0 || credit > 10) {
@@ -93,7 +95,7 @@ Page({
       })
       if (flag == true) {
         var digit = this.data.digitIndex + 1
-        var avgGPA = (sumGPA / sumCredit).toFixed(2)
+        var avgGPA = (sumGPA / sumCredit).toFixed(digit)
         this.setData({
           avgGPA: avgGPA,
         })
