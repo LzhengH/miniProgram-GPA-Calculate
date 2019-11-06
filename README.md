@@ -11,8 +11,5 @@
 本小程序可以根据输入的课程信息生成学生本人成绩单（需要完整信息），也可以只用于计算平均学分绩点（只需成绩和学分信息）。若有个别科目为五级分制（ABCDF），要将分数化为对应的百分制成绩填入到成绩栏内。
 
 ## 图片展示
-![search](https://ae01.alicdn.com/kf/H65bd8280f54746559e342c9799db1a8aH.png)
-![index](https://ae01.alicdn.com/kf/H52854e58d0fb42f18d5b70e3333a6da4l.png)
-![calculate](https://ae01.alicdn.com/kf/H6cdbe21b6d2141459723d30374d159e6M.png)
-![report](https://ae01.alicdn.com/kf/H6cc2e936af8d4f24ac992227c50a5f6b4.png)
-![code](https://ae01.alicdn.com/kf/H055ecd15a0454b669a0c15dd10bafe7da.jpg)
+<img src="https://ae01.alicdn.com/kf/H65bd8280f54746559e342c9799db1a8aH.png" width="270px"/> <img src="https://ae01.alicdn.com/kf/H52854e58d0fb42f18d5b70e3333a6da4l.png" width="270px"/> <img src="https://ae01.alicdn.com/kf/H6cdbe21b6d2141459723d30374d159e6M.png" width="270px"/>  <img src="https://ae01.alicdn.com/kf/Hf63a6f262deb418f9c6a9386c0b51b8fG.png" width="270px"/>  <img src="https://ae01.alicdn.com/kf/H055ecd15a0454b669a0c15dd10bafe7da.jpg" width="270px"/>  <img src="https://ae01.alicdn.com/kf/H3a3834c094204f2189209509b4bf8750X.png" width="270px"/>  
+
