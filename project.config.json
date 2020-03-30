@@ -21,7 +21,7 @@
 	},
 	"appid": "wxdba081738e9f948b",
 	"projectname": "GPA-Calculate",
-	"libVersion": "2.9.0",
+	"libVersion": "2.9.2",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {
@@ -41,7 +41,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": 6,
 			"list": [
 				{
 					"id": -1,
@@ -81,6 +81,13 @@
 					"id": -1,
 					"name": "about",
 					"pathName": "pages/about/about",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "history",
+					"pathName": "pages/history/history",
 					"scene": null
 				}
 			]

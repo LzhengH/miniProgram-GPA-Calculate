@@ -1,0 +1,77 @@
+<view class="root">
+  <view class="scene">
+    <!-- 不存在记录时显示 -->
+    <view class="none-view" wx:if="{{reportHistorys.length==0}}">
+      当前本地无记录
+    </view>
+    <!-- 存在记录时显示 -->
+    <view wx:if="{{reportHistorys.length>0}}">
+      <view class="view-itemTitle">
+        <van-row>
+          <van-col span="9" offset='2'>
+            <text class="text-itemTitle">成绩单名称</text>
+          </van-col>
+          <van-col span="7">
+            <text class="text-itemTitle">用户姓名</text>
+          </van-col>
+          <van-col span="4">
+            <text class="text-itemTitle">绩点</text>
+          </van-col>
+        </van-row>
+      </view>
+      <view>
+        <view class="divLine-title"></view>
+      </view>
+      <block wx:for="{{reportHistorys.length}}" wx:key="{{index}}">
+        <!-- 类随着index改变 -->
+        <view class="{{index%2!=0 ? 'view-item-odd':'view-item'}}">
+          <view class="" data-index="{{index}}" bindtap="panel">
+            <van-row>
+              <van-col span="9" offset='2'>
+                <text class="text-item">{{reportHistorys[index].reportName}}　</text>
+              </van-col>
+              <van-col span="7">
+                <text class="text-item">{{reportHistorys[index].username}}</text>
+              </van-col>
+              <van-col span="4">
+                <text class="text-item">{{reportHistorys[index].avgGPA}}</text>
+              </van-col>
+              <van-col span="2">
+                <!-- 箭头 -->
+                <view class='icon-item'>
+                  <van-icon name="{{showIndex==index ? 'arrow-up':'arrow-down'}} " color="#394ca3" size="50rpx" />
+                </view>
+              </van-col>
+            </van-row>
+          </view>
+          <!-- 隐藏行 -->
+          <view class='detail' wx:if="{{showIndex == index}}">
+            <van-row>
+              <van-col span="10" >
+                <button class="detail-btn" hover-class="button-hover" data-index="{{index}}" bindtap="calculate" style="width:224rpx;">
+                  <van-icon custom-class="detail-icon" name="edit" size="45rpx" color="#0b18a3"></van-icon>
+                  <text class="detail-text">导入计算</text>
+                </button>
+              </van-col>
+              <van-col span="7" >
+                <button class="detail-btn" hover-class="button-hover" data-index="{{index}}" bindtap="lookUp">
+                  <van-icon custom-class="detail-icon" name="orders-o" size="45rpx" color="#0b18a3"></van-icon>
+                  <text class="detail-text">查看</text>
+                </button>
+              </van-col>
+              <van-col span="7" >
+                <button class="detail-btn" hover-class="button-hover" data-index="{{index}}" bindtap="del">
+                  <van-icon custom-class="detail-icon" name="close" size="45rpx" color="#b60000"></van-icon>
+                  <text class="detail-text" style="color:#b60000">删除</text>
+                </button>
+              </van-col>
+            </van-row>
+          </view>
+        </view>
+      </block>
+      <view>
+        <view class="divLine-title"></view>
+      </view>
+    </view>
+  </view>
+</view>

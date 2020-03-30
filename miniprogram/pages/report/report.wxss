@@ -74,7 +74,7 @@
 
 .button {
   border: 1.5rpx solid #394ca3;
-  width: 250rpx;
+  width: 300rpx;
   margin-top: 30rpx;
   align-items: center;
   border-radius: 50rpx;
@@ -85,6 +85,88 @@
 }
 
 .btn-text {
-  font-size: 35rpx;
+  font-size: 18px;
   color: #394ca3;
 }
+/* 遮罩层 */
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.767);
+  z-index: 9000;
+  opacity: 0.5;
+}
+/*计算绩点弹窗 */
+.modalDlg{
+  width: 70%;
+    position: fixed;
+    top: 200rpx;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    margin: 0 auto;
+    border-radius:5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* 保存成绩单界面 */
+.pop-view{
+  border: 2rpx solid #394ca3;
+  background-color: rgb(238, 238, 238);
+  border-radius: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500rpx;
+  height: 420rpx;
+  position: relative;
+  
+}
+input{
+  display: inline-block;
+  border: 3rpx solid #394ca3;
+  border-radius: 15rpx;
+  margin-top: 26rpx;
+  width: 400rpx;
+  height: 80rpx;
+  text-align: center;
+
+}
+.phClass {
+  text-align: center;
+}
+/* 弹出层里面的按钮组 */
+.pop-btn-view{
+  display: flex;
+  text-align: center;
+  margin-top: 16rpx;
+}
+/* 弹出窗口按钮样式 */
+.pop-btn{
+
+  width: 205rpx;
+  margin: 0 10rpx;
+}
+/* 取消按钮字体 */
+.btn-cancel{
+  color: gray;
+}
+/* 弹出层里面的标题 */
+.title-pop{
+  font-size: 52rpx;
+  color:#394ca3;
+  margin-top: 30rpx;
+  z-index: 1
+}
+/* 弹出层里面的正文 */
+.text-pop{
+  font-size: 40rpx;
+  color:#394ca3;
+  margin-top: 24rpx;
+  z-index: 1
+}
+

@@ -7,7 +7,7 @@
   
 }
 .scene{
-  height: 100vh;
+  height: 120vh;
   display: flex;
   align-items: center;
   flex-direction:column; 
@@ -17,7 +17,8 @@
   margin-top:40rpx; 
   display: flex;
   align-items: center;
-  margin-right:40%; 
+  align-self: flex-start;
+  margin-left: 50rpx;
 }
 .title{
   align-content: left;
@@ -25,7 +26,7 @@
   color: white;
 }
 .icon{
-  margin-top: 25rpx 
+  margin-top: 22rpx 
 }
 .text-view{
   width: 80%;

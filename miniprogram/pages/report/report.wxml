@@ -1,6 +1,28 @@
 <view class="root">
   <image class='background-image' src='../../images/report-background.png' mode="aspectFill"></image>
   <view class="scene">
+    <!-- 遮罩层 -->
+    <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+    <!-- 保存成绩单弹窗 -->
+    <form bindsubmit="formSubmit">
+      <view class="modalDlg" wx:if="{{showModal}}">
+
+        <view class="pop-view">
+          <text class="title-pop">成绩单保存</text>
+          <text class="text-pop">请输入此成绩单的名称</text>
+          <input type="text" value="{{reportName}}" placeholder="成绩单名称" placeholder-class="phClass" bindinput="update"></input>
+          <view class="pop-btn-view">
+            <button class="pop-btn" bindtap="cancel">
+              <text class="btn-cancel">取消</text>
+            </button>
+            <button class="pop-btn" form-type="submit">
+              <text class="btn-text">确定</text>
+            </button>
+          </view>
+        </view>
+      </view>
+    </form>
+
     <view class="view-title">
       <text>5分制绩点成绩单</text>
     </view>
@@ -28,21 +50,8 @@
     </view>
     <block wx:for="{{count}}" wx:key="{{index}}">
       <!-- 单科成绩 -->
-      <view class="view-item-odd" wx:if="{{index%2!=0}}">
-        <van-row>
-          <van-col span="13" offset='2'>
-            <text class="text-item">{{course[index].name}}</text>
-          </van-col>
-          <van-col span="4">
-            <text class="text-item">{{course[index].grade}}</text>
-          </van-col>
-          <van-col span="5">
-            <text class="text-item">{{course[index].credit}}</text>
-          </van-col>
-        </van-row>
-
-      </view>
-      <view class="view-item" wx:if="{{index%2==0}}">
+      <!-- 类随着index改变而改变 -->
+      <view class="{{index%2!=0 ? 'view-item-odd':'view-item'}}" >
         <van-row>
           <van-col span="13" offset='2'>
             <text class="text-item">{{course[index].name}}</text>
@@ -60,18 +69,25 @@
     <view>
       <view class="divLine-title"></view>
     </view>
-    <van-row>
-      <van-col span="10" offset="2">
-        <button class="button" hover-class="button-hover" open-type="share">
-          <text class="btn-text">分享成绩单</text>
-        </button>
-      </van-col>
-      <van-col span="10">
-        <button class="button" hover-class="button-hover" bind:tap="bindIndex">
-          <text class="btn-text">回到首页</text>
-        </button>
-      </van-col>
-    </van-row>
+    <view>
+      <van-row>
+        <van-col span="11" offset="1">
+          <button class="button" hover-class="button-hover" open-type="share">
+            <text class="btn-text">分享成绩单</text>
+          </button>
+        </van-col>
+        <van-col span="11">
+          <button class="button" hover-class="button-hover" bind:tap="preserve">
+            <text class="btn-text">保存成绩单</text>
+          </button>
+        </van-col>
+      </van-row>
+    </view>
+    <view>
+      <button class="button" hover-class="button-hover" bind:tap="bindIndex">
+        <text class="btn-text">回到首页</text>
+      </button>
+    </view>
 
 
 

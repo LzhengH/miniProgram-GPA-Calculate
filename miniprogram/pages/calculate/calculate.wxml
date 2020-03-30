@@ -4,7 +4,7 @@
     <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
     <!-- 计算绩点弹窗 -->
     <view class="modalDlg" wx:if="{{showModal}}">
-      <!-- 二维码或其他图片 -->
+      
       <view class="pop-view">
         <image src="../../images/pop-background1.png" />
         <text class="title-pop">您的绩点为</text>
@@ -85,6 +85,13 @@
       </block>
 
       <!--按钮-->
+      <!-- 选择保留位数 -->
+      <view class="view-digit">
+        <text class="text">保留小数（点击选择）:</text>
+        <view class="picker">
+          <picker bindchange="bindPickerChange" value="{{digitIndex}}" range="{{digit}}">{{digit[digitIndex]}}</picker>
+        </view>
+      </view>
       <!-- 清空、提交、计算 -->
       <view style="margin-top:40rpx">
         <van-row>

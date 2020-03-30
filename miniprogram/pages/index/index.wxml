@@ -1,6 +1,7 @@
 <view class="root">
   <!-- 背景图 -->
   <image class='background-image' src='../../images/blue_background1.png' mode="aspectFill"></image>
+  <!-- 右上角圆形图标 -->
   <view class="about-icon">
     <van-icon name="info-o" color="white" size="50rpx" custom-style="about-icon" bind:click="about"/>
   </view>
@@ -15,7 +16,9 @@
       <van-button round plain color="{{colorPrimary}}" custom-class="van-btn" bindtap="introduce">
         <text class="text">功能简介</text>
       </van-button>
-
+      <van-button round plain color="{{colorPrimary}}" custom-class="van-btn" bindtap="history">
+        <text class="text">查看已保存成绩单</text>
+      </van-button>
     </view>
     <text class="tips" bindtap="algorithm">查看计算公式</text>
   </view>

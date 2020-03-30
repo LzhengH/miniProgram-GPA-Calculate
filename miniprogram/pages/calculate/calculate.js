@@ -13,6 +13,8 @@ Page({
     creditTip: "请填入合理学分",
     avgGPA: null,
     showModal: false,
+    digit:[1, 2, 3, 4, 5],
+    digitIndex: 1
   },
   //加载本页面时获取本地缓存填在input内
   onLoad: function(options) {
@@ -63,7 +65,8 @@ Page({
         }
       })
       if (flag == true) {
-        var avgGPA = (sumGPA / sumCredit).toFixed(2)
+        var digit = parseInt(this.data.digitIndex) + 1
+        var avgGPA = (sumGPA / sumCredit).toFixed(digit)
         this.setData({
           avgGPA: avgGPA,
           showModal: true
@@ -92,8 +95,8 @@ Page({
         }
       })
       if (flag == true) {
-        var digit = this.data.digitIndex + 1
-        var avgGPA = (sumGPA / sumCredit).toFixed(2)
+        var digit = parseInt(this.data.digitIndex) + 1
+        var avgGPA = (sumGPA / sumCredit).toFixed(digit)
         this.setData({
           avgGPA: avgGPA,
         })

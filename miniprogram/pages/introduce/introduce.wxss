@@ -29,7 +29,6 @@
   margin-top: 25rpx 
 }
 .text-view{
-  flex: 1;
   width: 80%;
 }
 .main-text{

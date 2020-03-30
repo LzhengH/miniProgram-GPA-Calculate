@@ -28,5 +28,10 @@ Page({
     wx.navigateTo({
       url: '../about/about',
     })
+  },
+  history:function(){
+    wx.navigateTo({
+      url: '../history/history',
+    })
   }
 })
